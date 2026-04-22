@@ -1,0 +1,38 @@
+<odoo>
+   <data>
+       <record id="view_collaborator_form_inherit" model="ir.ui.view">
+           <field name="name">collaborator.form.inherit</field>
+           <field name="model">project.project</field>
+           <field name="inherit_id" ref="project.edit_project"/>
+           <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Collaborators">
+                        <field name="collaborator_ids">
+                                    <tree editable="bottom"
+                                          decoration-success="status == 'active'"
+                                          decoration-danger="status == 'inactive'">
+                                 <field name="employee_id"/>
+                                 <field name="status"/>
+                                    <button name="action_activate"
+                                            type="object"
+                                            string="Activate"
+                                            invisible="status == 'active'"
+                                    />
+
+                                    <button name="action_deactivate"
+                                            type="object"
+                                            string="Deactivate"
+                                            invisible="status == 'inactive'"
+                                    />
+
+                                </tree>
+
+                            </field>
+                    </page>
+
+
+                </xpath>
+           </field>
+       </record>
+   </data>
+</odoo>
