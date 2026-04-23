@@ -14,6 +14,7 @@
         'views/project_task_views.xml',
         'views/hr_employee_views.xml',
         'views/project_views.xml',
+        'report/project_report.xml',
         'views/project_collaborator_views.xml',
     ],
     'installable': True,

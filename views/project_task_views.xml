@@ -6,30 +6,30 @@
            <field name="inherit_id" ref="project.view_task_form2"/>
            <field name="arch" type="xml">
                <xpath expr="//field[@name='name']" position="before">
-    <field name="task_number" readonly="1"/>
+                   <field name="task_number" readonly="1"/>
 
-</xpath>
-<xpath expr="//notebook" position="before">
-    <group col="2">
-        <group >
-            <field name="developer_id"/>
-            <field name="functional_consultant_id"/>
-            <field name="development_status"/>
-            <field name="priority_custom"/>
-            <field name="internal_deadline"/>
-            <field name="module"/>
-            <field name="branch"/>
-            <field name="release_notes"/>
-        </group>
+               </xpath>
+                <xpath expr="//notebook" position="before">
+                    <group col="2">
+                        <group >
+                            <field name="developer_id"/>
+                            <field name="functional_consultant_id"/>
+                            <field name="development_status"/>
+                            <field name="priority_custom"/>
+                            <field name="internal_deadline"/>
+                            <field name="module"/>
+                            <field name="branch"/>
+                            <field name="release_notes"/>
+                        </group>
 
-        <group >
-            <field name="research_allocated_time" widget="float_time"/>
-            <field name="development_allocated_time" widget="float_time"/>
-            <field name="testing_allocated_time" widget="float_time"/>
-            <field name="allocated_time" widget="float_time" readonly="1"/>
-        </group>
-    </group>
-</xpath>
+                        <group >
+                            <field name="research_allocated_time" widget="float_time"/>
+                            <field name="development_allocated_time" widget="float_time"/>
+                            <field name="testing_allocated_time" widget="float_time"/>
+                            <field name="allocated_time" widget="float_time" readonly="1"/>
+                        </group>
+                    </group>
+                </xpath>
 
            </field>
        </record>

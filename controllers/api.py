@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 import base64
 import json
@@ -12,9 +11,6 @@ _logger = logging.getLogger(__name__)
 
 class EmployeeProjectAPI(http.Controller):
 
-    # ---------------------------
-    # BASIC AUTH HELPER
-    # ---------------------------
     def _authenticate(self):
         auth_header = request.httprequest.headers.get('Authorization')
 
@@ -37,9 +33,7 @@ class EmployeeProjectAPI(http.Controller):
             _logger.error("Auth error: %s", str(e))
             return None
 
-    # ---------------------------
-    # API ENDPOINT
-    # ---------------------------
+
     @http.route(
         '/api/employees/active-projects',
         type='http',
@@ -88,7 +82,3 @@ class EmployeeProjectAPI(http.Controller):
             }),
             headers=[('Content-Type', 'application/json')]
         )
-
-    @http.route('/test-api', auth='public')
-    def test(self):
-        return "OK"

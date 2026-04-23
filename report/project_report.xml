@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <data>
+
+        <record id="action_project_report" model="ir.actions.report">
+            <field name="name">Project Report</field>
+            <field name="model">project.project</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="binding_model_id" ref="project.model_project_project"/>
+            <field name="binding_type">report</field>
+            <field name="report_name">project_management_custom.report_project_template</field>
+        </record>
+
+        <template id="report_project_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+
+                        <div class="page">
+
+                            <h2 t-field="doc.name"/>
+
+                            <table class="table table-bordered table-sm">
+
+                                <thead>
+                                    <tr>
+                                        <th>Field</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <th>Date</th>
+                                        <td><span t-field="doc.date"/></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Odoo Version</th>
+                                        <td><span t-field="doc.odoo_version"/></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Odoo Type</th>
+                                        <td><span t-field="doc.odoo_type"/></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>GitHub Repo</th>
+                                        <td><span t-field="doc.repo_name"/></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>GitHub URL</th>
+                                        <td>
+                                            <a t-att-href="doc.repo_url" target="_blank">
+                                                <span t-field="doc.repo_url"/>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Hosting</th>
+                                        <td><span t-field="doc.hosting"/></td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                                                     <h3>Collaborators</h3>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doc.collaborator_ids" t-as="col">
+                                        <tr>
+                                            <td><span t-field="col.employee_id"/></td>
+                                            <td><span t-field="col.status"/></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+
+</odoo>
