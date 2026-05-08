@@ -2,7 +2,7 @@
 <odoo>
     <data>
 
-        <!-- Form View -->
+        
         <record id="view_employee_form_inherit" model="ir.ui.view">
             <field name="name">hr.employee.form.inherit</field>
             <field name="model">hr.employee</field>
@@ -14,7 +14,7 @@
             </field>
         </record>
 
-        <!-- Tree View -->
+        
         <record id="view_employee_tree_inherit" model="ir.ui.view">
             <field name="name">hr.employee.tree.inherit</field>
             <field name="model">hr.employee</field>
@@ -27,25 +27,22 @@
         </record>
 
 
-        <!-- Kanban View -->
+       
 
 
         <record id="view_employee_kanban_inherit_github" model="ir.ui.view">
-    <field name="name">hr.employee.kanban.github</field>
-    <field name="model">hr.employee</field>
-    <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
-    <field name="arch" type="xml">
-
-        <xpath expr="//field[@name='work_email']" position="after">
-            <div class="text-muted">
+        <field name="name">hr.employee.kanban.github</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_email']" position="after">
+                <div class="text-muted">
                     <i class="fa fa-github"/> GitHub:
-    <field name="github_account"/>
-
-            </div>
-        </xpath>
-
-    </field>
-</record>
+        <field name="github_account"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
 
 
 
