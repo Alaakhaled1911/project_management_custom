@@ -8,28 +8,31 @@
                 <xpath expr="//notebook" position="inside">
                     <page string="Collaborators">
                         <field name="collaborator_ids">
-                                    <tree editable="bottom"
-                                          decoration-success="status == 'active'"
-                                          decoration-danger="status == 'inactive'">
-                                 <field name="employee_id"/>
-                                 <field name="status"/>
-                                    <button name="action_activate"
-                                            type="object"
-                                            string="Activate"
-                                            invisible="status == 'active'"
-                                    />
+                           
+                         <tree editable="bottom"
+                            decoration-success="status == 'active'"
+                            decoration-danger="status == 'inactive'">
+                            
+                                        
+                        <field name="employee_id"/>
+                        <field name="status"/>
 
-                                    <button name="action_deactivate"
-                                            type="object"
-                                            string="Deactivate"
-                                            invisible="status == 'inactive'"
-                                    />
+                           <button name="action_activate"
+                                   type="object"
+                                   string="Activate"
+                                   invisible="status == 'active'" />
+                            
 
-                                </tree>
+
+                           <button name="action_deactivate"
+                                   type="object"
+                                   string="Deactivate"
+                                   invisible="status == 'inactive'" />
+
+                        </tree>
 
                             </field>
                     </page>
-
 
                 </xpath>
            </field>
