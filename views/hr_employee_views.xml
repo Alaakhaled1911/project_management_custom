@@ -27,9 +27,6 @@
         </record>
 
 
-       
-
-
         <record id="view_employee_kanban_inherit_github" model="ir.ui.view">
         <field name="name">hr.employee.kanban.github</field>
         <field name="model">hr.employee</field>
